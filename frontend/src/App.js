@@ -20,8 +20,8 @@ function App() {
   const [featuresLow, setFeaturesLow] = useState([]);
   const [featuresOpen, setFeaturesOpen] = useState([]);
   const [featuresClose, setFeaturesClose] = useState([]);
-  const [insight, setInsight] = useState("");
-  const [insight2, setInsight2] = useState("");
+  const [highest, setHighest] = useState("");
+  const [lowest, setLowest] = useState("");
 
   const [predictions, setPredictions] = useState([]);
   const [loading, setLoading] = useState(true); // State variable to track loading state
@@ -139,8 +139,8 @@ function App() {
           setFeaturesLow(data.predictions.btcLow)
           setFeaturesOpen(data.predictions.btcOpen)
           setFeaturesClose(data.predictions.btcClose)
-          setInsight(data.insight1)
-          setInsight2(data.insight2)
+          setHighest(data.highest)
+          setLowest(data.lowest)
           setData(data); // Set the data in state
         })
     } catch (error) {
@@ -289,12 +289,12 @@ function App() {
               <li> 100000</li>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row'}}>
-              <b>Insight: </b>
-              <li> {insight}</li>
+              <b>Highest: </b>
+              <li> {Highest}</li>
             </div>
             <div style={{ display: 'flex', flexDirection: 'row'}}>
-              <b>Insight: </b>
-              <li> {insight2}</li>
+              <b>Lowest: </b>
+              <li> {Lowest}</li>
             </div>
            
            
